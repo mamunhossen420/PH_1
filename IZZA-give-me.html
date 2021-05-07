@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>RealEstate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            overflow-x: hidden;
+        }
+
+        input {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+        }
+
+        #title {
+            font-size: 20px;
+
+        }
+
+        header {
+            margin: 10px 0px 0px 20px;
+        }
+
+        .right-header {
+            width: 80%;
+            float: right;
+
+        }
+
+        .left-header {
+            /*width: 15%;
+            float: left;*/
+            margin-top: 40px;
+        }
+
+        .right-header,
+        li {
+            list-style-type: none;
+            display: inline-block;
+            padding-left: 35px;
+            margin-top: 20px;
+            color: #A1A1A1;
+            cursor: pointer;
+
+        }
+
+        .search-container {
+            display: inline;
+            width: 100%;
+            /*float: left;*/
+            margin-left: 42px;
+
+        }
+
+        .button-listing {
+            /* margin-left: 40px;*/
+            padding: 13px 20px 13px 20px;
+            background-color: #1666D9;
+            color: white;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+
+
+        }
+
+        .search-input {
+            color: black !important;
+            width: 45%;
+            height: 20px;
+            border-color: transparent;
+            outline: none;
+            border-style: solid;
+            border-color: #A1A1A1;
+            border-radius: 40px;
+            margin-top: 10px;
+            padding: 20px;
+            border-width: 2px;
+        }
+
+        .search-input::placeholder {
+            color: #2c2b2bcc;
+            font-weight: 600;
+            font-size: 14px;
+
+        }
+
+        .main-container {
+            border-style: solid none none none;
+            border-width: 1.4px;
+            border-color: #A1A1A1;
+            margin: 0px 20px 0px 20px;
+        }
+
+        .sm-img {
+            width: 23.5%;
+            height: 100px;
+            margin: 5px;
+            border-style: none;
+            border-radius: 10px;
+            float: left;
+        }
+        #change-image{
+            cursor: auto !important;
+        }
+
+        .col-md-7 img:hover {
+            cursor: pointer;
+        }
+
+        .h1_style {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .search-input {
+
+                width: 80%;
+
+            }
+
+            .sm-img {
+                width: 21.5%;
+
+            }
+
+            .right-header,
+            li {
+                list-style-type: none;
+                display: inline-block;
+                padding-left: 0px;
+                margin-top: 20px;
+
+                margin-left: 15px;
+            }
+
+            .h1_style {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-xs-4 col-md-2">
+                <div class="left-header">
+                    <p id="title"><b>Real</b><span id="title-lw">Estate</span></p>
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="right-header">
+                    <div style="float: left;">
+                        <ul>
+                            <li style="color: black;">
+                                Buy
+                            </li>
+                            <li>
+                                Sell
+                            </li>
+                            <li>
+                                Rent
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="search-container">
+                        <input class="search-input" type="text" placeholder="🔍 Forest Hill, San Francisco, CA" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-top: 22px">
+                <button class="button-listing">
+                    <i class="fa fa-plus"></i>
+                    <span style="margin-left: 25px;">Add Listing</span>
+                </button>
+
+                <i class="fa fa-caret-down" style="font-size:-15px"></i>
+                <img src="https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg"
+                    style="border-radius: 30px;margin-top: 8px;" height="30" width="30"
+                    style="margin-top: 5px;display: inline;" />
+
+            </div>
+
+        </div>
+        <!-- <div class="left-header">
+            <p id="title"><b>Real</b><span id="title-lw">Estate</span></p>
+        </div> -->
+        <!-- <div class="right-header">
+           <div style="float: left;">
+                <ul>
+                    <li style="color: black;">
+                        Buy
+                    </li>
+                    <li>
+                        Sell
+                    </li>
+                    <li>
+                        Rent
+                    </li>
+                </ul>
+            </div>
+            <div class="search-container">
+                <input class="search-input" type="text" placeholder="🔍 Forest Hill, San Francisco, CA"/>
+                <button class="button-listing">
+                   <i class="fa fa-plus"></i>
+                    <span style="margin-left: 25px;">Add Listing</span>
+                </button>
+                <div style="float: right;margin-top: 10px;">
+                    <i class="fa fa-caret-down" style="font-size:-15px"></i>
+                    <img src="https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg" style="border-radius: 30px;margin-top: 8px;" height="30" width="30" style="margin-top: 5px;display: inline;"/>
+                </div>
+            </div>
+        </div> -->
+    </header>
+    <br /></br />
+    <div class="main-container">
+        <div class="row">
+            <div class="col-md-7">
+                <div style="margin-top: 10px;">
+                    <div
+                        style="background-color: white;border-radius: 10px;border-style: solid;border-width: 1px;border-color: #a1a1a15d;height: 475px;">
+                        <div>
+                            <img id="change-image"
+                                src="https://i.pinimg.com/originals/5e/8f/0b/5e8f0b24f19624754d2aa37968217d5d.jpg"
+                                style="width: 98.6%;height: 350px;margin: 5px;border-style: none;border-radius: 10px;"/>
+                        </div>
+                        <div>
+                            <img src="https://cdn.jhmrad.com/wp-content/uploads/nice-house-inside-beautiful-interior-home-designs_496737.jpg"
+                                class="sm-img one" />
+                        </div>
+                        <div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR455Gkp82XeQ3xlIVqwqsPWrZNKwJYV3gbWA&usqp=CAU"
+                                class="sm-img two" />
+                        </div>
+                        <div>
+                            <img src="https://lh3.googleusercontent.com/proxy/jMFuFhfRoZ4imC348_Gd1qyUkPwZ2OHNMjXMJ_n5_fCKjBbWkAEhTOan1RSm02nLHCgfUAxZNo-h7uu-7rfG40JKHPn_V2s92sHECKpj-DbG3CG_35zpUAOJ8Qy26AOE0cyE3NLGHphVjs_CLwHRc63A8eW8AziMqcNm=s0-d"
+                                class="sm-img three" />
+                        </div>
+
+                        <div>
+                            <img src="https://i.ytimg.com/vi/1oJgVGp_S0g/maxresdefault.jpg" class="sm-img four" />
+                        </div>
+
+                    </div>
+                    <div>
+                        <div style="margin-top: 20px;float: left;">
+                            <h1 style="font-size: 24px;">The Crystal Hyat Place<span
+                                    style="font-size: 14px;padding-left: 10px;color: rgba(0, 0, 0, 0.507);">New
+                                    York/Midtown-South</span></h1>
+                            <p style="font-size: 14px;color: #a1a1a1;">52 West 36th Street,New York, NY 10018, United
+                                States of America</p>
+                            <div>
+                                <div style="margin-top: 15px;float: left;">
+                                    <h1 style="font-size: 15px;">Bathroom</h1>
+                                    <p style="color: #A1A1A1;margin-left: 25px;"><i class="fas fa-toilet"></i> 2</p>
+                                </div>
+                                <div style="margin-left:40px;margin-top: 15px;float: left;">
+                                    <h1 style="font-size: 15px;">Bedroom</h1>
+                                    <p style="color: #A1A1A1;margin-left: 25px;"><i class="fas fa-bed"></i> 2</p>
+                                </div>
+                                <div style="margin-left:40px;margin-top: 15px;float: left;">
+                                    <h1 style="font-size: 15px;">Area Space</h1>
+                                    <p style="color: #A1A1A1;margin-left: 3px;"><i class="fas fa-vector-square"></i>
+                                        2500<sup>2</sup> ft</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px;float: left;">
+                            <div>
+                                <h1 style="font-size: 20px;margin-left: 60px;">Price: <span
+                                        style="font-size: 28px;margin-left: 20px;color: black;">$15000</span></h1>
+                            </div>
+                            <div>
+                                <iframe
+                                    style="width: 200px;height: 100px!important;border-style: none;margin-left: 50px;"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54508.467991546786!2d74.14597639065776!3d31.365070343690476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ff9a30fa362d%3A0x528615a7981ce611!2sBahria%20Town%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620289807825!5m2!1sen!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <br />
+                        <div style="float: left;margin-top: 10px;">
+
+                            <h1 style="font-size: 24px;">Description</h1>
+                            <p style="font-size: 16px;color: #a1a1a1;">Just 5 minutes walk from the Empire State
+                                Building, this Manhatan hotel offers free Wi-Fi and modern rooms equiped with a
+                                flat-secreen Tv. The 34th street -- Herlad underground
+                                station is 4 minutes' walk away.
+                                <br />
+                                A corner sofa and a regrigrator are included in each room at Hayat Place New York. A
+                                work desk along with coffee making facilites is also included.
+
+                            </p>
+                        </div>
+                        <div style="float: left;margin-top: 10px;">
+
+                            <h1 style="font-size: 24px;">Home Details</h1>
+                            <p style="font-size: 16px;color: #a1a1a1;">Just 5 minutes walk from the Empire State
+                                Building, this Manhatan hotel offers free Wi-Fi and modern rooms equiped with a
+                                flat-secreen Tv. The 34th street -- Herlad underground
+                                station is 4 minutes' walk away.
+                                <br />
+                                A corner sofa and a regrigrator are included in each room at Hayat Place New York. A
+                                work desk along with coffee making facilites is also included.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div style="float: right;background-color: white;margin-top: 10px;">
+                    <div
+                        style="margin-left:30px;background-color: white;border-radius: 10px;border-style: solid;border-width: 1px;border-color: #a1a1a15d;height: 475px;">
+                        <div style="margin: 10px 20px 10px 20px;">
+                            <div>
+                                <div style="float: left;">
+                                    <img src="https://img.freepik.com/free-photo/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg?size=626&ext=jpg"
+                                        height="50" width="50"
+                                        style="border-radius: 50px;margin-top: 24px;margin-right: 20px;" />
+                                </div>
+                                <div style="float: left;">
+                                    <h3 style="font-weight: bold;">Jonathan Straus</h3>
+                                    <p style="color: #A1A1A1;font-size: 12px;margin-top: -10px;margin-bottom: 10px;">
+                                        Joined in Sep 01,2018 </p>
+                                    <div style="float: left;">
+                                        <a href="#" style="color: #367CDE;">View profile</a>
+                                    </div>
+                                    <div style="float: right;">
+                                        <a href="#" style="text-decoration: none;color: #367CDE;margin-left:120px;"><i
+                                                class="far fa-star"></i> 4.8(198)</a>
+                                    </div>
+                                    <br /><br />
+
+                                </div>
+                            </div>
+                            <br /><br /><br /><br /><br /><br />
+                            <p style="color:#A1A1A1;">I'm a postdoc working on a cancer research.Just moved from Taiwan
+                                to NY in 2017. Can't tell you how much I love this city since
+                                my first visit in 2010. I'm crazy dog lover. A big fan of musicals. Love ice cream but
+                                will only have it when something big happens. lol
+                            </p>
+                            <div style="margin-top: 30px;">
+                                <p>Language: <span style="color: #A1A1A1;margin-left: 60px;">English</span></p>
+                                <p>Response Rate: <span style="color: #A1A1A1;margin-left: 20px;">100%</span></p>
+                                <p>Response Time: <span style="color: #A1A1A1;margin-left: 20px;">Within an hour</span>
+                                </p>
+                                <ul style="margin-left:-78px;">
+                                    <li>
+                                        <p style="color: black;">Contact with host:</p>
+                                    </li>
+                                    <li>
+                                        <button
+                                            style="color:#367CDE;border-radius:20px;border-style:solid;border-color:#367CDE;font-weight: 900;padding:6px 20px 6px 20px;background-color: white;display:inline;cursor: pointer;"><i
+                                                class="far fa-envelope"></i> Email</button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            style="color:#367CDE;border-radius:20px;border-style:solid;border-color:#367CDE;font-weight: 900;padding:6px 20px 6px 20px;background-color: white;display: inline;margin-left: -20px;cursor: pointer;"><i
+                                                class="fas fa-phone-volume"></i> Call</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--cards-->
+                            <div style="margin-top: 60px;">
+                                <h1 style="font-size: 24px;">Properties nearby </h1>
+                                <div
+                                    style="width:100%;background-color:white;height: 130px;border-radius: 10px;margin-top: 25px;box-shadow:  -1px 0px 16px 0px #00000059;;">
+                                    <div style="width: 33%;float: left;">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSyQA3sbJC44el5u9DTW5c66Iu4KxHtvV8cZBYOVedr25t4HlHob8uPWd3mPy1d0FpE3Y&usqp=CAU"
+                                            style="border-radius: 10px;" width="100%" height="130" />
+
+                                    </div>
+                                    <div style="width: 64%;float: right;">
+                                        <h1 style="margin-left: 0px;" class="h1_style">$1,500,000</h1>
+                                        <p style="font-size: 14px;color: #a1a1a1;">52 West 36th Street,San Francisco</p>
+                                        <div style="margin-top: -15px;">
+                                            <div style="float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 25px;"><i
+                                                        class="fas fa-toilet"></i> 2</p>
+                                            </div>
+                                            <div style="margin-left:10;float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 25px;"><i class="fas fa-bed"></i>
+                                                    2</p>
+                                            </div>
+                                            <div style="margin-left:10px;float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 15px;"><i
+                                                        class="fas fa-vector-square"></i> 2500<sup>2</sup> ft</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div
+                                    style="width:100%;background-color:white;height: 130px;border-radius: 10px;margin-top: 15px;box-shadow:  -1px 0px 16px 0px #00000059;;">
+                                    <div style="width: 33%;float: left;">
+                                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgVFhYZGRgaHBgZGhwcGhwhGhwcGhoZGhkaHB0cIS4lHR4rHxoaJzgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHxISHjQrJCs2NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAL4BCQMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAADBAIFBgEABwj/xABKEAACAAQDBAYGBwUECgMBAAABAgADESEEEjEFQVFhBiJxgZGhEzJSscHRB0JicqKy8BQjgpLhJDOj0hUWQ3OTs7TC4vFUY2Q0/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAKhEAAgICAgEDAwMFAAAAAAAAAAECEQMhEjFRBCJBE2FxkaGxMkKBwfD/2gAMAwEAAhEDEQA/AKZV4jwh2SlBYwNEJMEFrR7dHIEgipEUUweXBoxNEgwl87R1ABBRfdAoxBF4CJIlTExbdBpRtWMKQW0ElsIkQCYL6MboxiK0gqRJJUHlLAsBFVgyodYmqjfBcsI5AAhN5jhWDlOURycYCkYFQ7hBVSkTCCJKIDkY5kjwSJHyG+MN0m6bqlZeGId9DM1RfuD655+r2wLCot9G4I4Rz0cfP+jPToikvFX3CaBcffUfmA7RqY+jSGVlDIwZWAKsDVSOIIsRAbozi0BWVE8vKGMscCcTC8jULlbxL0cMKkSCQOQaFylIiUhkpECpjKRhR5cQ9FSHDLiDJDqRhRkgbJDjJEfRVg2YrnWBejMWjSYH6MQeRjAoBTS8GVRwjyMaUgiJFhgpl1EdlpEk0pBUWGMeVYMiQWUBTdBVAgWKLlL8oOiikSZa7o6smkCzEVSCLHglImg5RgBVhhVgUhIZCQjYCaA0iSrHgImBE2zESI8FggiLNAsxAwptPacuQmea4Vd3tMeCjUmKbpD0ql4eqJR5vsg9VPvkb/si/ZHzXam1XmuXnOXY6DgOCjRV/V4WU1FWykMbky46RdKpuJqi9STvWt2HF24fZFu3WMhicVSgTXe3y+cDn4otUaCtgNN3jCrm47Y455pS10jqjBRWg0jGEGjXHHePnGq6N9Jp2FNZbZ5Zu0tj1DXUqfqNzHeDGLXfBJUxkNR4boMMrjp7QJRUj9GdH+kEnFrWW1HA66NQOvOn1l+0Ld9ouMsfnLZ20CGVkYo6moINGB5ER9V6LdPUekvFEI+gmiyN98fUPP1fuxbTVx2c8ouJuQseCwQAG/67ojSkCwESsepEiY9GswIpETLg4EeKQeQKFjLjhSGSsRZIKkahRkgeSG2SIZIfkA+eIogwpwiMhL6QxljrGOIohhEjiS+MFlJfWDYGElLBlSsdSmlLwdUhbARSVSOlKwYKI8y8IABQyyLwWW1YMqEwMyeFo1mCg0gyvC8uVzgyruhXQAyNBlaAovCE9sbclYZeuczkdVF9Y8z7K8z3ViUgosJ8xEUu7BVUXZjQCPnvSPpiz5kw9ZaXzObOw5ewvPXs0jPdJelLzWrNawuktfVXn2/aPOnCMhjMW8wVNlBso0HbxPMxCWVR0tv9i8MXzIdxe0QLJc8d0VaMSTUmD4fDk0oKk3iezpAZmrup8flHJKd22zpUekgSIT+uyJNLoV7fgYsBKpm7fgIDOlnMvDNbwMIpWPxoRSl68fhHCvCCBbN2j3CIrDiA1FqjWHsLtCln8f1+uyH9nbBaZh2n5lUBioBPWJqbga0sRWKrESSpowvUe/jBjkcXp7M42tm+6K9MZuGotfSSPYJun3CfV+6bdlax9a2RtWTiUzymDDQjRlPBl1B9+6sfmnBlw4CXJ3bjvp+vKNj0Q2y8p/SIcraFT6rAE5lPEeY1EdKnHJrp/wAnPLG1v4PuZlmIOlIHsbaqYmWHTXRlOqtwPLgd8PeihOTTpi8fAqorHchhoII9ljcjcRcKY8Ug5WIlY3I1C7JEMsMlI5lhlIHE+boloYVY9LEGWkeiIzyCDokRRBWtYZYUgWA6iAb4PXdCrtwvHFxZECgDgWseaXAExW4+MdM8kxqYBhEiYTjAA0HlPXWFdmJKpEdJtfxhfHY1JS5nag3cSeAG8x846UdMc1UrRdyKbnm539mnaYnKSirY0YuT0aLb3SxUDLJYb6zDSg+5XXtNu3WPme1NuFi2UlmNy5ua8anUxXYvGvNqWNAN3ugMuV1GbhHHkyuWukdcMaX5BOpyljeu86mLHG4BklZzYVW3bHcQijDClMxyk8dfdFz0jSmG/iSOZydr8l1HT/AbZeE/dIQNVQ6cQLxTdHpWZpnd72jbdHWKyEApRpaA1ANiqm1RY8xeM30Gkh2nE6DJ5l4knqRRraJLh7v974CE8ZIo8vmx/KY1D4dcz5a0ztSuuixRbZljNKB9pvyEi0aL2CS0Z4r1X+8vuEdw0osbRP0dn7V9ynSG0ZVXKDQml/6xclWyeBxNJKqSRdtObMYFiXBFKbx7xBcHIBkg/ab85EHfDgAH7SfmWJtJP/JT+0d6GYEPiACKgI7U7CotbW5i4wWykfDJMXqvmnC9qj0z0r2ePAi9R9EMQ6YmiGmaW4anCqngeHlFz0dkZsMhPtTbn/fP4RHI2t/gZVdAeg+3MuJlhqrnojA6Mr2U1FjRqV7DpcD7HSPhW1sLkSROXVQlaa0YKrUpvrk8TH2jY+N9NJlzB9ZQT94Wb8QMdkcn1I2+1pnLOCi6Q7SOUjsehhTlI5liVI9SNZqIZY9lidI5SNYOJ89lpDKIIXWu9COy/uiPpiNGHYdfOPWOdjocC1DAncVpATiCTceETRhGAeKRDJDFYIiUFd3GNYAISDShDuHkqQbwZMMvteRhHkSBQiBBXVgjsgqwViBrUgEgUGtTFlLwyHRgYKuAMSllQyiz4H0g6SvMZhVgwJUlhRhTVQp9WnDxih2dhTMmKpNzUknlr3/KHdsSazZ5/wDsfzofjHJFBOQrYZK+Ib4xxZHJ7bO2CQ5h9mSzh5sxWJZZaEgjQvKzMR/FURWyZJGHZyLGtP5gDDmzMQVkTx7UrL/hiFZcphhmbN1SxXL1dzJu9Ya6778IjT/cov8ARHHJSSv3V98XfSRCMPQ+2nuP9IpcbMJlhaAUVBUb63vzjS9Ml/swP20p4P8A0hWtr8sddP8ABa7FZRLk1AzCWgB30yDfuij+jwVad2S/e8aPASQsmWTYCWhPYJYMVX0VAZsQx1USSLV3zNxse+FirUgydOLLiQl3JH128iBGe2zhh6eXQ1q7+SsRGmQMzPYU9I4tpcxQ7bSk+SK6M4rzCNe8LBbDJ6MrMl2mNpRkoL71Bt2fGFcxJqbw3MNpn3k/KsKKI6ox0Qk9lxssj0Kj7V7/AG2pbdDOKvQDTMv5lgGyzWSKahj+dqe+HMQlh2p+dYlKPuKp+0u+iWIyYigRWJluBWttDUU32p3xb9HX/sybuvO/5zxUdE8VKScxdSzejfJegHEnurDWwcQBhl4Zpv8AzZhiE46/QMezu00rhDylA93o7+Av2gRqfoo2qZmHeW3rS208iB2UH80ZDFz/AOzN/uj/AMv9eEV+C2lPwr4j9nYK7S2ZCVBuAC1FNiSozXrdhY6RT07puPkTMrVn3lUNaxMLH5Qk7YxIdpiz5qu5zM6zGVmPEkG5jQYP6QNpyqUxLOBudVevaWXN4GOmmyCVH6PIiJMfFcF9MuIX++w0p+aMyH8WeNFgfphwb0EyVPlneQFdR3qwb8MYzR9Ij0ZvA9O9mzfVxcteTkyz+MLFt/prC/8AyZH/ABU/zQDUzAS5rm2bzgwkZtWPfeM9h+kuEbSeo+8HXzZaRZ4ba8hjRcRKJ4ekWvhWsemskX0zmcWWaYRhzENyUT61REcJPU8COIMVm3OmOFkK6qwM1NFKm5W+QncGoVzCtIEsiitgSb6NBLw6E2Yd4gyyUU5S1+Yt4RRbF6VYKbLRnnS5TsOsC4Cq1iVzPQWqIFtXpngJdf7SZjgWEtS9eQayfiif1E/kPB+DWGWisKjdW1KeEEdV+r22I9xj5xs36SsOzlZivLQnquesKfbC3U9mbtja7PnJNQPJdZi+0jBgORp6p5GFVP5M4tdoel13UrDKYkggGFFc6U8omGNRWNKN9ip0fn/aL1aaeLnzyfKISko6cpY/749ibqx4sp8Qkdr11t/sx5hvnEJI649CkhyEcDeo8pY+UFlgfsr61zDs9ZYjhwMr1I9Q6nf6MADtrHVngYcy7VLA762ZT2bvAQvFDWBxLVT/AIY8Eb5Q7tjbbzpQRwKhg1RpZWFKd4hJkzAKASay7AVPqNuHbFti+j7MB6MHW+c0AFOyta8t8birWg26Zr8KEeQJRa5lKrAagNLABij+jSZT9oPESfP0kEkYSeKFp2U0UURRooAF2B3DhEtm7MWWGSWGObLmuSWy1pUDtNonHG0mn8jSkm1RfSsUiI7MbM705kO1KcdIz+0wZkxHWoVWdmrYglSBQHmYtJGyJm5Mo50Hlr5RYyOjub1pqDkoJPnSE444u2xvc+kfM8Rh36wC1BIaxFdAPhCTKy+sCO0Uj6Xi+hbj1JqNyYFT4jNXyimxWw8QnrS2I4rRh+Gp8Y6YvFLpkZKa7RT7HasoClgWvb2j5X5Q1jZy0FGBNVJAOnWUisLzJAupFOI0gBwoFaEitOel4EvTO7TCsqqguzMSfTAnSja6Coi/2Ex9AoANmcf4jb4pNlYUiar1BF+3TdGn2EpElVNjnfzmMR7x4xLNBxVNeB8ck3di+KU/srk7pLb/ALH68YR2pNyTEmC+RgrcwaVF+II7hFttBQMG9TrJI7ylB76d0UmMl5leprnIJ7cy6dxMQimvd4ZSTXRT4nZoSY6jQMcv3TdPwkRF5MExGKOVCfWUejbtQ0XnpbuiZffpHsQ4uOjglyT2IvIgDyYeaaugNTwWpPlCuLmZTQqRUVuaHw1ic3BdtDx5P4EWpEaDgIkzClrHhrA6nlHGyh2PMBxEaFcPL9lPBYImClsaBEJ7o1/dD8TNKQOUSLVvqeJNY1K7Kln6i+I+cEXYko/UX+f/AMo3JeUDizJVj1I1/wDq/J9kf8T/AMokOjknh+P+sbkvIeLMdB8HjHlMHlO6MPrKxVvFTWnKNX/q1JPtdzxE9FpW53H8S/5Y3NeTcWWexvpXxkqiz1XELxICTP5lGU24rXnG82J0+wOJIBmehc06k0BRXk9Sp8QeUfMD0Ul7nf8AD/lj3+qK7nfvA+AjLIl8ivFfwIGWfRV3kpTXgg98MydmTXcEIaZFFTYVy86cd0bTBYCUmgCDgFprz3xcYaRJP2v4vlSBL1ONfceOGTPn2G6KMVo7gVpZQToANTT3Rc4PocgpSW783Jp8FjfYaWg9VVHYBDTFVuxA7TT3xzy9a/7YlY+n8syeG6OMBQBEHAfJRTzh+X0eT6zE9lvnD0/b2DQ0bEygeGdSfAEmK2f06wK1yuz09mW9O4soB8Ym8+aXX7IosUEPS9lSk/2Y/iqfzQz6NNMoHYCPyiMpiPpNw49WRMbhmKKD+Jj5QtN6f4lxml4MKLAE+kcVJAHqqtySBStyaRNxyPb/AHYy4Lo15wqEkByO0W98BnYB6HJlcC5IrWnOsZB9qbSm+pJKsQCaIFuRU2mGo74ptobXxspwk6a8ssK0zVFCSP8AZ14G0MsbfyhXJeDcMrr9anfb5RXz9solnnJ4gHwrGAxc1Hu+ImOTwlsfzssVkwCppWm7MKHvAJoe8xRYn8sRzXwb7HbakvSxfXSWW7KHLTjeKLE4mUT/AHbpzzIo/lZj7oys5Rw3xAqQpYVoPC+n65ReCcemyMmpdo12BoytMQkojKGYqcoLVoMwsSaHThFnsvEZZmQmiuQK0sDUUPZ/SDdIJqy5SYHCioQ5tLu/12I32rbcAOEV2Eksyq2UgrQkHUDeL8IOP1P1PbLp/qB4uO49h9t4geiSXUeoCeZKCi63pAGxCUUBhmJTxzKeFP0RBOkmTIgy0cAqCBZkA3nitBr7UZrEPcnSpr4w6xpqmByaZ7ErR30K52pyp/Q+cdmTQFzUDUoaHQ33wsWLNSvE95pDAlhlyk2NNI6cSuDiSm6kpCkzablgwCoQCOqoIuRWzV4Dz4wvicS7kZ2JpWldBpUgaCtBpwiyXZycz3/KOnBoPqj3++EXppfYLzJlOE6hbnTyBiFYexMthbdyWnutA8p4+R+ULKFOjcieSGNizMmJltwYe4wNf1rHJasJqtlbUEGhpoRY0hMkdMpF7QaThw5Y0+s3HiYXx8tkIBqNYsdlrrUUudacecPbRwqOo6yhhpRl/wA0I9IarM2j9XW94gJjaZj4mCzMK6mhB7dx7DviBl01DeFowpZ4DEf2bEIfreia+tUZ9P5oQEwrSnvPwieGIAcXutNO0/OBNL53hUqbGb0iwlzXYA53P8Ta0HPnHaMdWY/xH5wHBqAKV9r/ALYaZwBFVFUJbLLpZMQjC5B6uGlqabirzBTzHhFPhMRR1tpzFa2uSYHj8QWy1OmYDszQp6QU138Yiuh32alp7z52HlJOmIJhZWyu9qCulaGNG/QWUCjPMmuSwXrFd4JNCVJ3cYx3Q1q47DD7R/K0fZsYt5f3x+R4hmk4uo+C+FJrZkNtdEcLKws+YqNnRGKku1iAb0Bod26NXtnYGDTZ0+ZLw8kMMPMZWEtCwPoyQwala761hXpV/wDx4j7jQ3tJydlTR/8AlI/w6RHnLV+Rskd6Mf8ARVhQ74g009FQ8K+kj6Ft6QBIX/fYT/qpMY/6GZdRijzle6Z842vSlqSlH/3YX/qpMUkvdbFUr0iux0qjNTiY+X/SGp9On3V97H4x9Oxb9Y9pj5h0/JOIX7qfGNifuGy/0lXsSUaDx/Ew+AhLHr+9f7x+MWGxCaa/qrRXbQJ9K+t2Pvi6/qZB9IWXDPMdERczOaAcaA/ARs+luxkwWzUkGhnvMRph1y0VuoOG6tN4GtAYW2Dg3wuMwMxwGLy5k5BrQNKmZLcQaHtHYSt01xbzgztm9cUqjUNmqc1MtqaVr5ws5NzSXXZktNhZeJEsNOZlMxvUAdGNKnrAJODFerQgrr2GGdlYjIkt6OZk1mAqs5g+VmBy5kyEAUzUYkb7ikU+3NqGY1MxyjQZ3I8JgWnhGp+jzYo9FNxrqOrLnJI6qg6MrzGIuTUlRXQBuIiajSt6Hbt0iG2cKJqUC6qWQ2oGG7iOHfGKxIFNCCCPHfG36L4pZstpTUzgCh41Fj8D3cYznSPBZDnpSpow4MDT9dnOOzFLmqfaIzjWyiRiGqPjy4Q7LMVr1rbiPhAMXOIYgMaW3ngI6YyULlX2IyTlo0FYFOYgWFTGfOIf2j4n5xEzCdSfEw79Sq0hFi+5bzZ9gLqeYHxgeb7Q8vlBJagy1U8BEf2JOfjDVKWzUhFZi+z5D5RJcta0I7KfKIACCoy783cQPeDHE5Fw2GK5gMgPbQ/CL2RJUg/upWvschp+7jOZwDUFh3iGFx7i2dgO6FewrQziSA7jLSmWwoALfV6vwEK5673/AJz7qRD06kkmpJ+0B8I8rLc04Wzce7lBTMSDD23Hd/5RI8phHbmHurHEAYhVS50ALX8+RiTSGqVyGqrVhwFdfMeMBtGphUzUH7xP5n5bskepN+rNHYJhH56QKQcxAAXtY0HeTYCOB1FCVXz+BgNroww8ycfr/wCKv+eDJNmhAvpCDmr/AHq6X+1Cf7QKDqr6q7j7I58otcDgXfLQJcjUFrVodSRAfFdoZNvpnOjalMVLd2XKGYnrBj6jAdVSSbkR9BxW1ZNUodGqf3b+w49niRCEvZcutpKVPBFB90Wg6MigPo6aUozDyUxKfFu3/JSDklRXbZ2tJeRMRSakU/u3ArUakpQd8HxPSTDHBvJDnO0rIP3c2laAa5KQB9jijKyOBmYEZnvRjxNDCs/Y0sWOcfxDl9jnC/Tg60/1C5P5Geg20hKlzMuZizCpGHxDiwteUoprofjDe1OkWdb57Oh/u56iqTFOjIb1XximwM9sOXSVNIDG4Ko1TRRrY8BC83FF1JLgDMT6tqqxJOu8ivfFK3tCcq6Zdy9slr1NOtqXB139QGMx0inK8wNndTQCyBxv+szqe6kBeVVjVxU5xau5iCLDW9eyPPhkOVLhgTUk0By77jQwtcZWhuXJUw+ycLUDru1QaVUCtzxcwrtLZSmaeuwLMaKU31Fq5hxESnTEl6OGvWoJ3knhWl9/DjDGy8SmZ+oHIablOdRRiJeRgSQDdd1fOGi3d0K6qhbGSZiNLmM7fukyA5RYMGUUo+nWOkVG2scXXJ1dQxIUgk31q7WoYt9t7bmkejdFXOFY0ZSCFNiKVpcaVjNY56kn7vZYCHUdptCt6qyajMabt94t5DuFCI7gMcoUMwFydwOkK4bZzjVHvwB95tGi2Jg1Vg7z5crK6kABpj0UhstE4nfXdTQmDKMn0gJpdsb2Psd5ATEvTIVzHKesFpQ1BpxgfS/D5gJorlIAawofZala1tQ8wI3GytuoA37MjvlszzGVJSdpAbXXLXNwEYLp7t1mnlWKu2RevlyoovZEJJPaxH3RC43KM7en4+wZtSjSMkZY3mncdxU+FKwDE4Mls2ZQDSla7qDhDuCwLzGVS1ATap4kAkD4++GNrSJcr93UEjvPbyjp5J6JJPsqP9Ev7S+J+UDOzm4r4n5Q16Sp9YecSnOtLEEjgY3GP/M1s56IhQAdwr2gRHI/EwFHJOtIYyn2j4w6kn5/UWmV8dRb3MFDU0/XfHKxylAZQ8NPdHCN8Mq9NwiQqaBRqdKDuv4xgWLupFjuqNw0v367+Q3QXCgXzadlfKGRO6tNNYFLF6b7d+/UxqbDaRJUWjE+tQFQulc1CGtwrEfQNlAympIIrSlLnfpqPGCq9GqQKjjQi3HiOUP4PaCI3WRXQjKyugYrUAEpdSCMtqEUrTStc00DkinSQ1RbzENSMEzECo1AArckg0AB40p3gb47LVTbORStwta0puzAbz4RYYLIjB+u5qCKhVFiO3dB4SatGUo/JW4YUo43EeQjQmSBJl09k67yDc+NTTdpCWDSVkQFCTTMWLm9QLEACw8b6xaoVKqoRaCtLvvNT9aM8MnsaM0i06BsWngOXYZrKGYm6uKBS2U3oacib2j6XhsNiM7qZ9ASzIjS0ORa0CkrQtel82/WPlWBxjySTKb0ZNiUsSO3WIYjbE5mq0x2J1qSajgYjL0zbuxlJm2xvSZZcxkdEZgz0FSrM7OaCtwFvWptbfGK6VdJHM5QEoCu5lIrmFwVFCRlqdLk2AIipxEl5hYm9WbfwJEdxGwBTMHYG1RQGGhhp92LKUmitOMJZiLVDECvHKB8IYk4pjLVEQlgHBO4hjzPLfEm2VNQjKU309YsdK/oQqEdSSUdqOalTvBII8YssZNtoewWxcRNRnUdVM7sSwFMqs5sTckK1KXNDwh3EYcSmKTJlWWqnJTKKWF99Qa/+orsPj1RJtirOermFSAKg9jUZx+jEcfPM2Y751YvRyTUVN6jTXf2GAo+7a0HlS0z6H0b2Rs2bLLuzzHpdasRawrlFrkakCMLtrFD0rejXIugUVsKmCbN25NlSWRLK4WtLmim++16jSKqfMLVNOZ5XpfxgwbjK6C2mjyYhgbi94YfHhAAS5NK0zUFwGG7gYVZaG552EL46pvyXwCgDypFfqNdC8bC4jGBrhKHiSTEsBtEIetLDi9sxUd9AYrgY7WJvLJ/IKRezukbvSrTFp6oBTKo4IqoqqOwCu+EP2hCS+Y5yfWcE7hcBQYr45WEWnaWxm21Q/KmOHzq4z7jmUGu6gb5QpPw71LFHNb1oTXnXfAiY6kwroSOwke6G5X2jI5RgK0I7iIjLYsQKnhxtyEMy8dMU1DmvMBvzAxI7RetdDpVaqfwmnlA0EXdCBWp8IFmPGLHDyXmXAIB1Y0I91TBv9GH2l/l/rFI4210DkhD0bHQeYjn7MxOkNnGjcvnHBtBhoq+EPwh5B7gYwbkaQxJwLgVrTsNIA2039sDsC/KLXYc4OCrXa5B4jf3iHjHG3SFlySsVXZ41Jr2n5UjowQ3Ad9fnaNEmEXhEv2caRX6UfhE+T8mY/ZhuF/Z393GBACNHiMAD8DvhGfhQPXt9sC3Y3D9dkI4UFSsQRqNUbrwQYlhcqN177hSOYiUUPuNiIikytd3ZAlHWjfcirnKoFKnIPHLwh/B7RZPWTMutV1Fq6HWKRZhoOweQFIvMPjUcUIAAFCSOVN2nzrEFJvQ9tMtZeLRxVTfgbHw3x18OcwEUiYJnAKWqK0J1sSfH+m6PJjJ8kjMWAsRmBoRy5QrTfRWMjQ4XDW73/MYdaVuipwHSSWBlmKRUscy3FyToe3nFq20UYVlkOx0UetxuNVHM++0Jtdjqn0K4hlVqk3FABz1oBvJ5RX4eQ5q1SvXe1vbaoJ414RaLg2rne7EdwHADd8YQw5NG+/N8pjw8ZeANeQ+GWiGwNWetQDXrHWsLT8LLNay1Fd69U+UM4Zup/E/52gUwnXdx3eMWi70TcVRVvsqX9V5iduUr7qwB9lsxC+lRgFpmPVte1GO74wWfj0zUDg9/wAdIFMm1BiihF/BNtjrpJX13Rj9hPlb8UJbRnSmU0R81KZi40UUXqnNYAAa7oQmTgN8LPiSdBAm8a7NFSBKYlWIAROOMqeiMdjhjGOExyOw3gNmvN9UUXex07uJgxi26QG6FEUkgAEk6AaxdYTZAUZppFr5a2H3j8IsFlysMldWO/6zchwHlFJjca0w3sNyj48THRHHGO3tiW310MYzaFeqll0rpXs4CK2DJLPCC+hMUpy2GkismvUmht4fGAlTByI8BHLxKNgMhh7ZeJKON1dORgQERcRqrZkb3B4gOuYa6EcDDISMnsjGFGB1DUUj3HtHzjV5zHdjlyjZzTjTJUgUxART9cIMojwW8VJlLicMyeoAyb0PD7NfdFd+zV6yHtXeOV/dGqaXCeI2dmOZDlbjx5EbxEpQ8DqRi1RvVymtjSl9OEOSNlTjfLlB3sQvkb+UaCdipcpVDmY1gABlAtzBB3c4WbbpH93LROZqzeNvOsSWBfLH5+EQw2xZ3VOZSRpQFhbTrMAO6G8Rs5hXPNRFP1SyjeSOqBQ0rblaKqftSa/rO3YDQeC0hSsPwivg3u8ljicNhwppOZn+ynU7OsR41MVodRcMQeVf/Q7jHawlnjnzJRaoeLaLzC9JJyWzZ14Pc/za+cTTb4CkejJJZ2PWsM7s9K0rbNGezRyJWh9+S4bpBNAyplQVY2UFrknVq8eEIT8Q7mruzdpJ8tBCwETAjOTegUeyxwVGhIiRjkABELHqR0R2MY4BHjHo8YwxyPBSSAASToBcnsg+AwpmsFUgHieXZGt2fsxZItdt7HXsHARSGNy/AkpUVeztg6NN/lH/AHH4CG9obTSWMiAFhag9Ve2nuhfbO1WDGUtqWLb+7hFdIw29rx0pKOoiPywL53OYmpO8/DhBZOGpciLCVKBjrLBUV2ByYoKbo5mHE+cTnCppEPR9nhGphP/Z"
+                                            style="border-radius: 10px;" width="100%" height="130" />
+
+                                    </div>
+                                    <div style="width: 64%;float: right;">
+                                        <h1 style="margin-left: 0px;" class="h1_style">$1,500,000</h1>
+                                        <p style="font-size: 14px;color: #a1a1a1;">52 West 36th Street,San Francisco</p>
+                                        <div style="margin-top: -15px;">
+                                            <div style="float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 25px;"><i
+                                                        class="fas fa-toilet"></i> 2</p>
+                                            </div>
+                                            <div style="margin-left:10;float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 25px;"><i class="fas fa-bed"></i>
+                                                    2</p>
+                                            </div>
+                                            <div style="margin-left:10px;float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 15px;"><i
+                                                        class="fas fa-vector-square"></i> 2500<sup>2</sup> ft</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div
+                                    style="width:100%;background-color:white;height: 130px;border-radius: 10px;margin-top: 15px;box-shadow:  -1px 0px 16px 0px #00000059;;">
+                                    <div style="width: 33%;float: left;">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvfbDBAOfVFT_y8CsB7-NCeWW6XSoavAQDQVoVTD7tF0XrOY63WOFyV54U7xuBy2H6o7s&usqp=CAU"
+                                            style="border-radius: 10px;" width="100%" height="130" />
+
+                                    </div>
+                                    <div style="width: 64%;float: right;">
+                                        <h1 style="margin-left: 0px;" class="h1_style">$1,500,000</h1>
+                                        <p style="font-size: 14px;color: #a1a1a1;">52 West 36th Street,San Francisco</p>
+                                        <div style="margin-top: -15px;">
+                                            <div style="float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 25px;"><i
+                                                        class="fas fa-toilet"></i> 2</p>
+                                            </div>
+                                            <div style="margin-left:10;float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 25px;"><i class="fas fa-bed"></i>
+                                                    2</p>
+                                            </div>
+                                            <div style="margin-left:10px;float: left;">
+                                                <p style="color: #A1A1A1;margin-left: 15px;"><i
+                                                        class="fas fa-vector-square"></i> 2500<sup>2</sup> ft</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--left-->
+
+        <!--right-->
+
+    </div>
+    <script>
+        //window.alert("Please connect with internet ,before visit my page");
+
+        jQuery(document).ready(function ($) {
+
+            $('.one').on({
+                'click': function () {
+                    $('#change-image').attr('src', 'https://cdn.jhmrad.com/wp-content/uploads/nice-house-inside-beautiful-interior-home-designs_496737.jpg');
+                }
+            });
+
+            $('.two').on({
+                'click': function () {
+                    $('#change-image').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR455Gkp82XeQ3xlIVqwqsPWrZNKwJYV3gbWA&usqp=CAU');
+                }
+            });
+
+            $('.three').on({
+                'click': function () {
+                    $('#change-image').attr('src', 'https://lh3.googleusercontent.com/proxy/jMFuFhfRoZ4imC348_Gd1qyUkPwZ2OHNMjXMJ_n5_fCKjBbWkAEhTOan1RSm02nLHCgfUAxZNo-h7uu-7rfG40JKHPn_V2s92sHECKpj-DbG3CG_35zpUAOJ8Qy26AOE0cyE3NLGHphVjs_CLwHRc63A8eW8AziMqcNm=s0-d');
+                }
+            });
+
+            $('.four').on({
+                'click': function () {
+                    $('#change-image').attr('src', 'https://i.ytimg.com/vi/1oJgVGp_S0g/maxresdefault.jpg');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
